@@ -21,7 +21,7 @@ return {
 
           -- always rebase
           vim.keymap.set('n', '<leader>P', function()
-            vim.cmpd.Git { 'pull', '--rebase' }
+            vim.cmd.Git { 'pull', '--rebase' }
           end, opts)
 
           -- Allows to set up branch I am pushing and any tracking
