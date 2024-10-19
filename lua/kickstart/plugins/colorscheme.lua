@@ -13,6 +13,8 @@ return {
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+      -- set background to be same as terminal
+      vim.cmd.hi 'normal guibg=none'
     end,
   },
 }
