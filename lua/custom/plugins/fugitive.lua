@@ -15,12 +15,12 @@ return {
           end
           local bufnr = vim.api.nvim_get_current_buf()
           local opts = { buffer = bufnr, remap = false }
-          vim.keymap.set('n', '<leader>P', function()
+          vim.keymap.set('n', '<leader>p', function()
             vim.cmd.git 'push'
           end, opts)
 
           -- always rebase
-          vim.keymap.set('n', '<leader>p', function()
+          vim.keymap.set('n', '<leader>P', function()
             vim.cmpd.Git { 'pull', '--rebase' }
           end, opts)
 
