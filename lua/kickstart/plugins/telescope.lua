@@ -22,6 +22,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'debugloop/telescope-undo.nvim' },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -89,12 +90,37 @@ return { -- Fuzzy Finder (files, lsp, etc)
             require('telescope.themes').get_cursor(),
             require('telescope.themes').get_ivy(),
           },
+          undo = {
+            side_by_side = true,
+            layout_strategy = 'horizontal',
+            layout_config = {
+              preview_height = 0.8,
+            },
+            -- telescope-undo.nvim config, see below
+            mappings = {
+              -- insert mode
+              i = {
+                ['<cr>'] = require('telescope-undo.actions').restore,
+                ['<S-cr>'] = require('telescope-undo.actions').yank_deletions,
+                ['<C-cr>'] = require('telescope-undo.actions').yank_additions,
+              },
+              -- normal mode
+              n = {
+                ['y'] = function(bufnr)
+                  return require('telescope-undo.actions').yank_larger(bufnr)
+                end,
+                ['Y'] = require('telescope-undo.actions').yank_additions,
+                ['u'] = require('telescope-undo.actions').restore,
+              },
+            },
+          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension 'undo')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -135,6 +161,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       vim.keymap.set('n', '<leader>fn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[F]ind [N]eovim files' })
+      vim.keymap.set('n', '<leader>u', '<cmd>Telescope undo<cr>', { desc = '[U]ndo tree' })
     end,
   },
 }
