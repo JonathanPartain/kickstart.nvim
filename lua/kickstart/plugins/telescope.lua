@@ -53,7 +53,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         defaults = {
           mappings = {
             i = {
-              ['<c-enter>'] = 'to_fuzzy_refine',
+              ['<C-enter>'] = 'to_fuzzy_refine',
               ['<C-h>'] = 'which_key',
             },
           },
