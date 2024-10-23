@@ -78,5 +78,15 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 20
+vim.opt.sidescrolloff = 20
 
+-- auto save *.tf files
+vim.api.nvim_create_augroup('tf_autosave', {})
+vim.api.nvim_create_autocmd('BufWritePost', {
+  desc = 'format all .tf files recursively when saving a .tf file',
+  group = 'tf_autosave',
+  pattern = '*.tf',
+  command = '!tofu fmt -recursive',
+})
+--
 -- vim: ts=2 sts=2 sw=2 et

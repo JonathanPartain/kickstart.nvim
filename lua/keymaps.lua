@@ -45,9 +45,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --
 -- theprimeagen stuff
 -- Move highlighted items
+-- Add arrowkeys to same functionality
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+vim.keymap.set('v', '<S-down>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<S-up>', ":m '<-2<CR>gv=gv")
+--
 -- J stays in place
 vim.keymap.set('n', 'J', 'mzJ`z')
 
