@@ -19,7 +19,7 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = '/home/jonathan/.config/nvim/.undo//'
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
