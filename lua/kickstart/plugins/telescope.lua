@@ -54,7 +54,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           path_display = {
             'truncate',
           },
-          mappings = {
+          file_ignore_patterns = {
+            'node_modules',
+            '.git',
+          },
             i = {
               ['<C-enter>'] = 'to_fuzzy_refine',
               ['<C-h>'] = 'which_key',
