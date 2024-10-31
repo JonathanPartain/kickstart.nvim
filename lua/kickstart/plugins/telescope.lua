@@ -58,6 +58,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             'node_modules',
             '.git',
           },
+          mappings = {
             i = {
               ['<C-enter>'] = 'to_fuzzy_refine',
               ['<C-h>'] = 'which_key',
