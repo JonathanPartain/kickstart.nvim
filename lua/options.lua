@@ -89,4 +89,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = '!tofu fmt -recursive',
 })
 --
+-- disable lsp log
+vim.lsp.set_log_level 'off'
 -- vim: ts=2 sts=2 sw=2 et

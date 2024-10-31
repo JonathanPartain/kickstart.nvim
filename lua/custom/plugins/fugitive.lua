@@ -29,6 +29,7 @@ return {
       })
       vim.keymap.set('n', 'gl', '<cmd>diffget //2<CR>', { desc = '[G]et [L]eft diff' }) -- get left
       vim.keymap.set('n', 'gr', '<cmd>diffget //3<CR>', { desc = '[G]et [R]ight diff' }) -- get right
+      vim.keymap.set('n', '<leader>gpr', '<cmd>silent !tmux neww gh-pr<CR>', { desc = '[Git]hub [P]ull [Request]' })
     end,
   },
 }
