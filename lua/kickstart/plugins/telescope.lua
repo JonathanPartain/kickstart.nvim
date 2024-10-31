@@ -74,26 +74,75 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           help_tags = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           keymaps = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           buffers = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           quickfix = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           jumplist = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           grep_string = {
             theme = 'dropdown',
             additional_args = { '--hidden' },
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           live_grep = {
             theme = 'dropdown',
             additional_args = { '--hidden' },
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
         },
         extensions = {
