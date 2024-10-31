@@ -60,28 +60,28 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         pickers = {
           find_files = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           help_tags = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           keymaps = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           buffers = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           quickfix = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           jumplist = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           grep_string = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
           live_grep = {
-            theme = 'ivy',
+            theme = 'dropdown',
           },
         },
         extensions = {
