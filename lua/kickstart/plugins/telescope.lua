@@ -51,6 +51,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
+          path_display = {
+            'truncate',
+          },
           mappings = {
             i = {
               ['<C-enter>'] = 'to_fuzzy_refine',
@@ -61,6 +64,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
         pickers = {
           find_files = {
             theme = 'dropdown',
+            layout_strategy = 'cursor',
+            hidden = true,
+            layout_config = {
+              height = 0.95,
+              width = 0.95,
+              preview_width = 0.65,
+            },
           },
           help_tags = {
             theme = 'dropdown',
@@ -79,9 +89,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           grep_string = {
             theme = 'dropdown',
+            additional_args = { '--hidden' },
           },
           live_grep = {
             theme = 'dropdown',
+            additional_args = { '--hidden' },
           },
         },
         extensions = {
