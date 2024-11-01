@@ -62,6 +62,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
             i = {
               ['<C-enter>'] = 'to_fuzzy_refine',
               ['<C-h>'] = 'which_key',
+              ['<C-i>'] = 'preview_scrolling_up',
+              ['<C-e>'] = 'preview_scrolling_down',
             },
           },
         },
