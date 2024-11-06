@@ -195,6 +195,18 @@ return {
         },
       }
 
+      local cmp = require 'cmp'
+      cmp.setup {
+        mapping = cmp.mapping.preset.insert {
+          ['<C-up>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-down>'] = cmp.mapping.scroll_docs(4),
+          ['<CR>'] = cmp.mapping.confirm { select = true },
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+        },
+      }
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
