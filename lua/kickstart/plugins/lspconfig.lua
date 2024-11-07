@@ -136,6 +136,23 @@ return {
               end,
             })
           end
+          -- the following code automatically shows line diagnostics in hover window
+          -- this setting is global, set only once
+          vim.o.updatetime = 250
+          vim.api.nvim_create_autocmd('CursorHold', {
+            buffer = bufnr,
+            callback = function()
+              local opts = {
+                focusable = false,
+                close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+                border = 'rounded',
+                source = 'always',
+                prefix = ' ',
+                scope = 'cursor',
+              }
+              vim.diagnostic.open_float(nil, opts)
+            end,
+          })
 
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
