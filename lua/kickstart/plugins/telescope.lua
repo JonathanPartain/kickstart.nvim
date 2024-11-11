@@ -70,9 +70,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         pickers = {
           find_files = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -80,9 +81,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           help_tags = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -90,9 +92,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           keymaps = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -100,9 +103,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           buffers = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -110,9 +114,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           quickfix = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -120,9 +125,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           },
           jumplist = {
             theme = 'dropdown',
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -131,9 +137,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           grep_string = {
             theme = 'dropdown',
             additional_args = { '--hidden' },
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
@@ -142,9 +149,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           live_grep = {
             theme = 'dropdown',
             additional_args = { '--hidden' },
-            layout_strategy = 'cursor',
+            layout_strategy = 'horizontal',
             hidden = true,
             layout_config = {
+              prompt_position = 'top',
               height = { padding = 10 },
               width = { padding = 10 },
               preview_width = 0.65,
