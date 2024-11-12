@@ -13,6 +13,7 @@ return {
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
 
     -- Required dependency for nvim-dap-ui
     'nvim-neotest/nvim-nio',
@@ -41,8 +42,19 @@ return {
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      {
+        '<leader>gb',
+        dap.run_to_cursor,
+        desc = 'Debug: Run to cursor',
+      },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
       { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
+      {
+        '<leader>?',
+        function()
+          require('dapui').eval(nil, { enter = true })
+        end,
+      },
       unpack(keys),
     }
   end,
