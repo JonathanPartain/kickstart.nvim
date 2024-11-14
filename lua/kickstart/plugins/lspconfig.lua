@@ -218,12 +218,41 @@ return {
           ['<C-up>'] = cmp.mapping.scroll_docs(-4),
           ['<C-down>'] = cmp.mapping.scroll_docs(4),
           ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+          ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+          ['<C-y>'] = cmp.mapping(
+            cmp.mapping.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            },
+            { 'i', 'c' }
+          ),
         },
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'path' },
+          { name = 'buffer' },
           { name = 'luasnip' },
         },
+        snippet = {
+          expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+          end,
+        },
       }
+      local ls = require 'luasnip'
+      -- snippet forwards backwards
+      vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+        if ls.expand_or_jumpable() then
+          ls.expand_or_jump()
+        end
+      end, { silent = true })
+
+      vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+        if ls.jumpable(-1) then
+          ls.jump(-1)
+        end
+      end, { silent = true })
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
