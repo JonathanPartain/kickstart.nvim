@@ -19,6 +19,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
+      { 'nvim-telescope/telescope-file-browser.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -165,11 +166,26 @@ return { -- Fuzzy Finder (files, lsp, etc)
             require('telescope.themes').get_cursor(),
             require('telescope.themes').get_ivy(),
           },
+          file_browser = {
+            theme = 'dropdown',
+            layout_strategy = 'horizontal',
+            hidden = true,
+            layout_config = {
+              prompt_position = 'top',
+              height = { padding = 10 },
+              width = { padding = 10 },
+              preview_width = 0.65,
+            },
+          },
           undo = {
             side_by_side = true,
+            theme = 'dropdown',
             layout_strategy = 'horizontal',
             layout_config = {
-              preview_height = 0.8,
+              prompt_position = 'top',
+              height = { padding = 10 },
+              width = { padding = 10 },
+              preview_width = 0.65,
             },
             -- telescope-undo.nvim config, see below
             mappings = {
@@ -208,6 +224,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
       vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = '[F]ind [C]olorschemes' })
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind in current [W]ord' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
+      vim.keymap.set('n', '<space>ft', ':Telescope file_browser<CR>', { desc = '[F]ile [T]ree' })
+
       --vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       --vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       --vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
