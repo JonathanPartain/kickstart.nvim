@@ -73,6 +73,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
             theme = 'dropdown',
             layout_strategy = 'horizontal',
             hidden = true,
+            no_ignore = true,
+            no_ignore_parent = true,
             layout_config = {
               prompt_position = 'top',
               height = { padding = 10 },
