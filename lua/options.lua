@@ -95,9 +95,9 @@ vim.opt.laststatus = 3
 -- python indenting
 
 vim.g.python_indent = {}
-vim.g.python_indent.open_paren = vim.bo.shiftwidth * 2
-vim.g.python_indent.nested_paren = vim.bo.shiftwidth * 2
-vim.g.python_indent.continue = vim.bo.shiftwidth * 2
+vim.g.python_indent.open_paren = 'shiftwidth() * 2'
+vim.g.python_indent.nested_paren = 'shiftwidth()'
+vim.g.python_indent.continue = 'shiftwidth() * 2'
 vim.g.python_indent.searchpair_timeout = 150
 
 -- vim: ts=2 sts=2 sw=2 et
